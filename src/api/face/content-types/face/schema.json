@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faces",
+  "info": {
+    "singularName": "face",
+    "pluralName": "faces",
+    "displayName": "face"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "faces"
+    }
+  }
+}

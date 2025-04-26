@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "product"
+    "displayName": "product",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,15 +17,16 @@
     "description": {
       "type": "blocks"
     },
-    "image": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "price": {
       "type": "decimal"
@@ -40,6 +42,23 @@
       "relation": "oneToMany",
       "target": "api::cart-item.cart-item",
       "mappedBy": "product"
+    },
+    "order_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-item.order-item",
+      "mappedBy": "product"
+    },
+    "variantOptions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.variant-option"
+    },
+    "faces": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::face.face",
+      "mappedBy": "products"
     }
   }
 }
