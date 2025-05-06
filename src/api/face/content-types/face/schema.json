@@ -4,20 +4,30 @@
   "info": {
     "singularName": "face",
     "pluralName": "faces",
-    "displayName": "face"
+    "displayName": "face",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "products": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::product.product",
       "inversedBy": "faces"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "slug": {
+      "type": "string",
+      "unique": true,
+      "required": false
     }
   }
 }

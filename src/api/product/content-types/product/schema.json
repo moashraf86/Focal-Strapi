@@ -11,8 +11,9 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "title": {
-      "type": "string"
+    "name": {
+      "type": "string",
+      "required": true
     },
     "description": {
       "type": "blocks"
@@ -49,16 +50,53 @@
       "target": "api::order-item.order-item",
       "mappedBy": "product"
     },
-    "variantOptions": {
-      "type": "component",
-      "repeatable": true,
-      "component": "product.variant-option"
-    },
     "faces": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::face.face",
       "mappedBy": "products"
+    },
+    "bannerImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "mappedBy": "products"
+    },
+    "slug": {
+      "type": "string",
+      "unique": true,
+      "required": false
+    },
+    "sizes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.size"
+    },
+    "bannerBgColor": {
+      "type": "string"
+    },
+    "buyWith": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "products"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "buyWith"
     }
   }
 }

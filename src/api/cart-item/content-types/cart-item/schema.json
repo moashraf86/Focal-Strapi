@@ -26,7 +26,10 @@
       "target": "api::cart.cart",
       "inversedBy": "cart_items"
     },
-    "variant": {
+    "size": {
+      "type": "string"
+    },
+    "color": {
       "type": "string"
     }
   }

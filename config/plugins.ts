@@ -1,3 +1,5 @@
+import collection from "../src/api/collection/controllers/collection";
+
 module.exports = ({ env }) => ({
   // ...
   upload: {
@@ -15,4 +17,31 @@ module.exports = ({ env }) => ({
     },
   },
   // ...
+  slugify: {
+    enabled: true,
+    config: {
+      contentTypes: {
+        product: {
+          field: "slug",
+          references: "name",
+        },
+        category: {
+          field: "slug",
+          references: "name",
+        },
+        face: {
+          field: "slug",
+          references: "name",
+        },
+        collection: {
+          field: "slug",
+          references: "name",
+        },
+        size: {
+          field: "slug",
+          references: "name",
+        },
+      },
+    },
+  },
 });

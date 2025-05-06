@@ -1,20 +1,36 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface ProductVariantOption extends Struct.ComponentSchema {
-  collectionName: 'components_product_variant_options';
+export interface ProductColor extends Struct.ComponentSchema {
+  collectionName: 'components_product_colors';
   info: {
-    displayName: 'VariantOption';
+    displayName: 'Color';
   };
   attributes: {
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     name: Schema.Attribute.String;
-    values: Schema.Attribute.JSON;
+    pattern: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ProductSize extends Struct.ComponentSchema {
+  collectionName: 'components_product_sizes';
+  info: {
+    displayName: 'Size';
+  };
+  attributes: {
+    colors: Schema.Attribute.Component<'product.color', true>;
+    value: Schema.Attribute.String;
   };
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'product.variant-option': ProductVariantOption;
+      'product.color': ProductColor;
+      'product.size': ProductSize;
     }
   }
 }

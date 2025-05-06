@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_product_sizes",
+  "info": {
+    "displayName": "Size"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    },
+    "colors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.color"
+    }
+  }
+}
