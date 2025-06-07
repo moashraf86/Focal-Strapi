@@ -18,6 +18,7 @@ export interface ProductColor extends Struct.ComponentSchema {
 export interface ProductSize extends Struct.ComponentSchema {
   collectionName: 'components_product_sizes';
   info: {
+    description: '';
     displayName: 'Size';
   };
   attributes: {

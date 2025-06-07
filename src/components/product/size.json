@@ -1,7 +1,8 @@
 {
   "collectionName": "components_product_sizes",
   "info": {
-    "displayName": "Size"
+    "displayName": "Size",
+    "description": ""
   },
   "options": {},
   "attributes": {

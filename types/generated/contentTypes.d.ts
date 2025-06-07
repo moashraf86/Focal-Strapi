@@ -631,6 +631,10 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.Blocks;
     faces: Schema.Attribute.Relation<'manyToMany', 'api::face.face'>;
+    featured: Schema.Attribute.Boolean;
+    featuredBannerImg: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -651,6 +655,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     sizes: Schema.Attribute.Component<'product.size', true>;
     slug: Schema.Attribute.String & Schema.Attribute.Unique;
+    type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
