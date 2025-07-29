@@ -656,7 +656,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     sizes: Schema.Attribute.Component<'product.size', true>;
     slug: Schema.Attribute.String & Schema.Attribute.Unique;
-    type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

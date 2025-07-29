@@ -98,21 +98,19 @@
       "target": "api::product.product",
       "mappedBy": "buyWith"
     },
-    "type": {
-      "type": "string"
-    },
     "featured": {
       "type": "boolean"
     },
     "featuredBannerImg": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
