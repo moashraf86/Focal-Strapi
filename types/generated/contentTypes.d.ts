@@ -381,6 +381,7 @@ export interface ApiCartItemCartItem extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    addedToCartAt: Schema.Attribute.DateTime;
     cart: Schema.Attribute.Relation<'manyToOne', 'api::cart.cart'>;
     color: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
